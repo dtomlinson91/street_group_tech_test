@@ -6,6 +6,7 @@ authors = ["Daniel Tomlinson <dtomlinson@panaetius.co.uk>"]
 
 [tool.poetry.dependencies]
 python = "^3.7"
+apache-beam = {extras = ["gcp"], version = "^2.32.0"}
 
 [tool.poetry.dev-dependencies]
 # pytest = "^5.2"
