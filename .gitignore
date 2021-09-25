@@ -138,4 +138,6 @@ dmypy.json
 cython_debug/
 
 # USER
-data/
+
+# ignore the data csv files for input/output
+**/data/**/*.csv
