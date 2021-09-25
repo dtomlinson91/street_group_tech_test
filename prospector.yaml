@@ -15,6 +15,10 @@ pylint:
     - missing-module-docstring
     - logging-fstring-interpolation
     - missing-function-docstring
+    - abstract-method
+    - missing-class-docstring
+    - super-init-not-called
+    - arguments-differ
   enable:
 
   options:
@@ -62,7 +66,12 @@ pep257:
     - D413
     - D406
     - D103
+    - D101 # missing docstring in public class
+    - D102 # missing docstring in public method
 
+pyflakes:
+  disable:
+    - F401 # unused import
 
 dodgy:
   run: true
