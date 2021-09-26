@@ -1,0 +1,40 @@
+﻿site_name: The Street Group Technical Test
+repo_url: https://github.com/dtomlinson91/street_group_tech_test
+use_directory_urls: false
+nav:
+  - Documentation:
+      - Welcome: index.md
+  #     - Installation: documentation/installation.md
+  #     - Usage: documentation/usage.md
+  # - Comments and Caveats:
+  #     - Introduction: comments_caveats/introduction.md
+  #     - Time limit: comments_caveats/time_limit.md
+  #     - Third party libraries: comments_caveats/third_party_libraries.md
+  #     - Areas of improvement and comments: comments_caveats/area_of_improvement_comments.md
+  #     - Similar names algorithm: comments_caveats/similar_names.md
+  # - Reference:
+  #     - deduplicator.main: reference/api_documentation_main.md
+  # - Changelog: changelog/changelog.md
+theme:
+  name: material
+  palette:
+    primary: indigo
+    accent: blue
+  feature:
+    tabs: true
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: true
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  # - pymdownx.arithmatex:
+  #     generic: true
+plugins:
+  - search:
+      lang: en
+extra_javascript:
+  - javascripts/config.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
