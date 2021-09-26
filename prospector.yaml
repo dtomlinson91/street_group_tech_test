@@ -20,6 +20,7 @@ pylint:
     - super-init-not-called
     - arguments-differ
     - inconsistent-return-statements
+    - expression-not-assigned
   enable:
 
   options:
