@@ -19,6 +19,7 @@ pylint:
     - missing-class-docstring
     - super-init-not-called
     - arguments-differ
+    - inconsistent-return-statements
   enable:
 
   options:
