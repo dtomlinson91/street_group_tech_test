@@ -142,3 +142,4 @@ cython_debug/
 # ignore the data csv files for input/output
 **/data/**/*.csv
 **/data/**/*.json
+.vscode/settings.json
