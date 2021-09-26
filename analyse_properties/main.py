@@ -1,20 +1,11 @@
-import csv
 from datetime import datetime
 import hashlib
-import io
-from importlib import resources
 import itertools
 import pathlib
 
 import apache_beam as beam
-from apache_beam.io import fileio
 
 # from analyse_properties.debug import DebugShowEmptyColumn, DebugShowColumnWithValueIn
-
-
-def csv_reader(csv_file):
-    """Read in a csv file."""
-    return csv.reader(io.TextIOWrapper(csv_file.open()))
 
 
 def slice_by_range(element, *ranges):
@@ -214,22 +205,22 @@ class ConvertDataToDict(beam.DoFn):
 
 def main():
     # Load in the data from a csv file.
-    csv_data = resources.path(
-        # "analyse_properties.data.input",
-        # "pp-monthly-update-new-version.csv"
-        "analyse_properties.data.input", "pp-complete.csv"
+    input_file = (
+        pathlib.Path(__file__).parents[1]
+        / "data"
+        / "input"
+        / "pp-monthly-update-new-version.csv"
     )
 
     with beam.Pipeline() as pipeline:
         # Load the data
-        with csv_data as csv_data_file:
-            # https://github.com/apache/beam/blob/v2.32.0/sdks/python/apache_beam/io/fileio_test.py#L155-L170
-            load = (
-                pipeline
-                | fileio.MatchFiles(str(csv_data_file))
-                | fileio.ReadMatches()
-                | beam.FlatMap(csv_reader)
-            )
+        load = (
+            pipeline
+            | "Read input data" >> beam.io.ReadFromText(str(input_file))
+            | "Split by ','" >> beam.Map(lambda element: element.split(","))
+            | "Remove leading and trailing quotes"
+            >> beam.Map(lambda element: [el.strip('"') for el in element])
+        )
 
         # Clean the data by dropping unneeded rows.
         clean_drop = (
@@ -276,7 +267,9 @@ def main():
         )
 
         # Save the data to a .json file.
-        output_file = pathlib.Path(__file__).parent / "data" / "output" / "pp-complete"
+        output_file = (
+            pathlib.Path(__file__).parents[1] / "data" / "output" / "pp-complete"
+        )
         output = (
             formatted
             | "Combine into one PCollection" >> beam.combiners.ToList()
