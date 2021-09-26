@@ -11,7 +11,14 @@ Run the pipeline:
 python -m analyse_properties.main \
     --region europe-west2 \
     --input gs://street-group-technical-test-dmot/input/pp-monthly-update-new-version.csv \
-    --output gs://street-group-technical-test-dmot/input/pp-monthly-update-new-version \
+    --output gs://street-group-technical-test-dmot/output/pp-monthly-update-new-version \
     --runner DataflowRunner \
     --project street-group \
     --temp_location gs://street-group-technical-test-dmot/tmp
+
+
+## Errors
+
+Unsubscriptable error on window:
+
+<https://stackoverflow.com/questions/42276520/what-does-object-of-type-unwindowedvalues-has-no-len-mean>
