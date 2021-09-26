@@ -1,0 +1,14 @@
+docker run --rm \
+    -p 8098:8098 -p 8097:8097 -p 8099:8099 \
+    --name=beam_spark \
+apache/beam_spark_job_server:latest
+
+
+docker pull apache/beam_spark_job_server:2.33.0_rc1
+
+
+docker run --rm \
+    -e SPARK_DRIVER_MEMORY=8g \
+    -p 8098:8098 -p 8097:8097 -p 8099:8099 \
+    --name=beam_spark \
+apache/beam_spark_job_server:latest
