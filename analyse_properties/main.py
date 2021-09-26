@@ -277,7 +277,6 @@ def main():
             >> beam.io.WriteToText(
                 file_path_prefix=str(output_file),
                 file_name_suffix=".json",
-                shard_name_template="",
             )
         )
 
