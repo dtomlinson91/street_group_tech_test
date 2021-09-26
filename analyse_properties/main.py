@@ -91,7 +91,7 @@ class DeduplicateByID(beam.DoFn):
 
     def process(self, element):
         if len(list(element[1])) > 0:
-            deduplicated_element = (element[0], [element[1][0]])
+            deduplicated_element = list(list(element[0]), list([element[1][0]]))
             yield deduplicated_element
         else:
             yield element
