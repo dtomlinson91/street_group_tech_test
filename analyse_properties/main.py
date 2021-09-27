@@ -286,20 +286,12 @@ def run(argv=None, save_main_session=True):
     """Entrypoint and definition of the pipeline."""
     logging.getLogger().setLevel(logging.INFO)
 
-    # Default input/output files
+    # Default input/output files when ran from base of repo with files in ./data
     input_file = (
-        pathlib.Path(__file__).parents[1]
-        / "data"
-        / "input"
-        / "pp-2020.csv"
-        # / "pp-complete.csv"
+        pathlib.Path("./data/input/pp-2020.csv")
     )
     output_file = (
-        pathlib.Path(__file__).parents[1]
-        / "data"
-        / "output"
-        / "pp-2020"
-        # / "pp-complete"
+        pathlib.Path("./data/output/pp-2020")
     )
 
     # Arguments
