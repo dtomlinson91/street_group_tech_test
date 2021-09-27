@@ -710,7 +710,7 @@
 <li>The key being the id across all columns (<code>id_all_columns</code>).</li>
 <li>The value being the raw data as an array.</li>
 </ul>
-<p>The mapping table is then condensed to a single dictionary with these key, value pairs and is used as a side input further down the pipeline.</p>
+<p>The mapping table is then condensed to a single dictionary with these key, value pairs (automatically deduplicating repeated rows) and is used as a side input further down the pipeline.</p>
 <p>This mapping table is created to ensure the <code>GroupByKey</code> operation is as quick as possible. The more data you have to process in a <code>GroupByKey</code>, the longer the operation takes. By doing the <code>GroupByKey</code> using just the ids, the pipeline can process the files much quicker than if we included the raw data in this operation.</p>
 <h2 id="prepare-stage">Prepare stage<a class="headerlink" href="#prepare-stage" title="Permanent link">&para;</a></h2>
 <ul>

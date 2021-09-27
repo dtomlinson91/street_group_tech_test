@@ -667,7 +667,7 @@
                 
                 <h1 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h1>
 <p>This page documents how to run the pipeline locally to complete the task for the <a href="https://www.gov.uk/government/statistical-data-sets/price-paid-data-downloads#section-1">dataset for 2020</a>.</p>
-<p>The pipeline also runs in GCP using DataFlow and is discussed further on but can be viewed here. We also discuss how to adapt the pipeline so it can run against <a href="https://www.gov.uk/government/statistical-data-sets/price-paid-data-downloads#single-file">the full dataset</a>.</p>
+<p>The pipeline also runs in GCP using DataFlow and is discussed further on but can be viewed <a href="../dataflow/index.html">here</a>. We also discuss how to adapt the pipeline so it can run against <a href="https://www.gov.uk/government/statistical-data-sets/price-paid-data-downloads#single-file">the full dataset</a>.</p>
 <h2 id="download-dataset">Download dataset<a class="headerlink" href="#download-dataset" title="Permanent link">&para;</a></h2>
 <p>The input data by default should go in <code>./data/input</code>.</p>
 <p>For convenience the data is available publicly in a GCP Cloud Storage bucket.</p>
@@ -676,13 +676,13 @@
 </code></pre></div>
 <p>to download the data for 2020 and place in the input directory above.</p>
 <h2 id="entrypoint">Entrypoint<a class="headerlink" href="#entrypoint" title="Permanent link">&para;</a></h2>
-<p>The entrypoint to the pipeline is <code>analyse-properties</code>.</p>
+<p>The entrypoint to the pipeline is <code>analyse_properties.main</code>.</p>
 <h2 id="available-options">Available options<a class="headerlink" href="#available-options" title="Permanent link">&para;</a></h2>
 <p>Running</p>
-<div class="highlight"><pre><span></span><code>analyse-properties --help
+<div class="highlight"><pre><span></span><code>python -m analyse_properties.main --help
 </code></pre></div>
 <p>gives the following output:</p>
-<div class="highlight"><pre><span></span><code>usage: analyse-properties <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>--input INPUT<span class="o">]</span> <span class="o">[</span>--output OUTPUT<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>usage: analyse_properties.main <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>--input INPUT<span class="o">]</span> <span class="o">[</span>--output OUTPUT<span class="o">]</span>
 
 optional arguments:
   -h, --help       show this <span class="nb">help</span> message and <span class="nb">exit</span>
@@ -690,11 +690,14 @@ optional arguments:
   --output OUTPUT  Full path to the output file without extension.
 </code></pre></div>
 <p>The default value for input is <code>./data/input/pp-2020.csv</code> and the default value for output is <code>./data/output/pp-2020</code>.</p>
-<p>If passing in values for <code>input</code>/<code>output</code> these should be <strong>full</strong> paths to the files. The test will parse these inputs as a <code>str()</code> and pass this to <code class="highlight"><span class="n">beam</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">ReadFromText</span><span class="p">()</span></code>.</p>
 <h2 id="run-the-pipeline">Run the pipeline<a class="headerlink" href="#run-the-pipeline" title="Permanent link">&para;</a></h2>
 <p>To run the pipeline and complete the task run:</p>
-<div class="highlight"><pre><span></span><code>analyse-properties --runner DirectRunner
+<div class="highlight"><pre><span></span><code>python -m analyse_properties.main <span class="se">\</span>
+--runner DirectRunner <span class="se">\</span>
+--input ./data/input/pp-2020.csv <span class="se">\</span>
+--output ./data/output/pp-2020
 </code></pre></div>
+<p>from the root of the repo.</p>
 <p>The pipeline will use the 2020 dataset located in <code>./data/input</code> and output the resulting <code>.json</code> to <code>./data/output</code>.</p>
                 
               

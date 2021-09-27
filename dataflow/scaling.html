@@ -686,7 +686,7 @@ struct.error: &#39;i&#39; format requires -2147483648 &lt;= number &lt;= 2147483
 <h2 id="solution">Solution<a class="headerlink" href="#solution" title="Permanent link">&para;</a></h2>
 <p>A possible solution would be to leverage BigQuery to store the results of the mapping table in as the pipeline progresses. We can make use of BigQueries array type to literally store the raw array as we process each row.</p>
 <p>In addition to creating the mapping table <code>(key, value)</code> pairs, we also save these pairs to BigQuery at this stage. We then yield the element as it is currently written to allow the subsequent stages to make use of this data.</p>
-<p>Remove the condense mapping table stage as it is no longer needed.</p>
+<p>Remove the condense mapping table stage as it is no longer needed (which also saves a bit of time).</p>
 <p>Instead of using:</p>
 <div class="highlight"><pre><span></span><code><span class="n">beam</span><span class="o">.</span><span class="n">FlatMap</span><span class="p">(</span>
     <span class="n">insert_data_for_id</span><span class="p">,</span> <span class="n">beam</span><span class="o">.</span><span class="n">pvalue</span><span class="o">.</span><span class="n">AsSingleton</span><span class="p">(</span><span class="n">mapping_table_condensed</span><span class="p">)</span>

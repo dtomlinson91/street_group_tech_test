@@ -699,10 +699,6 @@
 <p>We need to choose a <code>worker_machine_type</code> with sufficient memory to run the pipeline. As the pipeline uses a mapping table, and DataFlow autoscales on CPU and not memory usage, we need a machine with more ram than usual to ensure sufficient memory when running on one worker. For <code>pp-2020.csv</code> the type <code>n1-highmem-2</code> with 2vCPU and 13GB of ram was chosen and completed successfully in ~10 minutes using only 1 worker.</p>
 </div>
 <p>Assuming the <code>pp-2020.csv</code> file has been placed in the <code>./input</code> directory in the bucket you can run a command similar to:</p>
-<div class="admonition caution">
-<p class="admonition-title">Caution</p>
-<p>Use the command <code>python -m analyse_properties.main</code> as the entrypoint to the pipeline and not <code>analyse-properties</code> as the module isn't installed with poetry on the workers with the configuration below.</p>
-</div>
 <div class="highlight"><pre><span></span><code>python -m analyse_properties.main <span class="se">\</span>
     --runner DataflowRunner <span class="se">\</span>
     --project street-group <span class="se">\</span>
