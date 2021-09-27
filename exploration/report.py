@@ -1,13 +1,16 @@
-from importlib import resources
+import pathlib
 
 import pandas as pd
 from pandas_profiling import ProfileReport
 
 
 def main():
-    with resources.path("analyse_properties.data", "pp-complete.csv") as csv_file:
+    input_file = (
+        pathlib.Path(__file__).parents[1] / "data" / "input" / "pp-complete.csv"
+    )
+    with input_file.open() as csv:
         df_report = pd.read_csv(
-            csv_file,
+            csv,
             names=[
                 "transaction_id",
                 "price",

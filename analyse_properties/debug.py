@@ -22,3 +22,9 @@ class DebugShowColumnWithValueIn(beam.DoFn):
         if self.value in column:
             yield element
         return None
+
+
+class DebugPrint(beam.DoFn):
+    def process(self, element):
+        print(element)
+        yield element
