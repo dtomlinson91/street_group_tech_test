@@ -11,6 +11,10 @@ nav:
       - Data Exploration Report: discussion/exploration.md
       - Cleaning: discussion/cleaning.md
       - Approach: discussion/approach.md
+      - Results: discussion/results.md
+  - DataFlow:
+      - Running on DataFlow: dataflow/index.md
+      - Scaling to the Full DataSet: dataflow/scaling.md
   - Data Exploration Report: pandas-profiling/report.html
 theme:
   name: material

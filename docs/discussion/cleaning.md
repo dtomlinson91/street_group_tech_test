@@ -44,6 +44,8 @@ To try keep computation costs/time down, I decided to drop the categorical colum
 
 Initially I was attempting to work against the full dataset so dropping these columns would make a difference in the amount of data that needs processing.
 
+These columns are also not consistent. E.g the property `63` `B16, 0AE` has three transactions. Two of these transactions have a property type of `Other` and one transaction has a property type of `Terraced`.
+
 These columns do provide some relevant information (old/new, duration, property type) and these could be included back into the pipeline fairly easily. Due to time constraints I was unable to make this change.
 
 In addition, I also dropped the transaction unique identifier column. I wanted the IDs calculated in the pipeline to be consistent in format, and hashing a string (md5) isn't that expensive to calculate with complexity $\mathcal{O}(n)$.
@@ -113,3 +115,40 @@ It would be very unusual to see multiple transactions on the same date for the s
 Another reason could be missing building/flat/appartment information in this entry.
 
 We **keep** these in the data, resulting in some properties having multiple transactions with different prices on the same date. Without a time or more information to go on, it is difficult to see how these could be filtered out.
+
+<details>
+    <summary>Example (Output)</summary>
+
+```json
+[
+  {
+    "property_id": "20d5c335c8d822a40baab0ecd57e92a4",
+    "readable_address": "53 PAVENHAM DRIVE\nBIRMINGHAM\nWEST MIDLANDS\nB5 7TN",
+    "flat_appartment": "",
+    "builing": "",
+    "number": "53",
+    "street": "PAVENHAM DRIVE",
+    "locality": "",
+    "town": "BIRMINGHAM",
+    "district": "BIRMINGHAM",
+    "county": "WEST MIDLANDS",
+    "postcode": "B5 7TN",
+    "property_transactions": [
+      {
+        "price": 270000,
+        "transaction_date": "2020-04-23",
+        "year": 2020
+      },
+      {
+        "price": 364000,
+        "transaction_date": "2020-04-23",
+        "year": 2020
+      }
+    ],
+    "latest_transaction_year": 2020
+  }
+]
+
+```
+
+</details>
