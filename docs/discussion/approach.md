@@ -21,7 +21,7 @@ The mapping table takes each row and creates a `(key,value)` pair with:
 - The key being the id across all columns (`id_all_columns`).
 - The value being the raw data as an array.
 
-The mapping table is then condensed to a single dictionary with these key, value pairs and is used as a side input further down the pipeline.
+The mapping table is then condensed to a single dictionary with these key, value pairs (automatically deduplicating repeated rows) and is used as a side input further down the pipeline.
 
 This mapping table is created to ensure the `GroupByKey` operation is as quick as possible. The more data you have to process in a `GroupByKey`, the longer the operation takes. By doing the `GroupByKey` using just the ids, the pipeline can process the files much quicker than if we included the raw data in this operation.
 

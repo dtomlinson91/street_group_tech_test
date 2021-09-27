@@ -55,7 +55,7 @@ A possible solution would be to leverage BigQuery to store the results of the ma
 
 In addition to creating the mapping table `(key, value)` pairs, we also save these pairs to BigQuery at this stage. We then yield the element as it is currently written to allow the subsequent stages to make use of this data.
 
-Remove the condense mapping table stage as it is no longer needed.
+Remove the condense mapping table stage as it is no longer needed (which also saves a bit of time).
 
 Instead of using:
 

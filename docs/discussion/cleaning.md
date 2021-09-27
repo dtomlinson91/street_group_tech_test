@@ -64,7 +64,7 @@ We strip all leading/trailing whitespace from each column to enforce consistency
 
 Some of the data is repeated:
 
-- Some rows repeated, with the same date + price + address information but with a unique transaction id.
+- Some rows are repeated, with the same date + price + address information but with a unique transaction id.
 
 <details>
     <summary>Example (PCollection)</summary>
@@ -87,7 +87,7 @@ Some of the data is repeated:
     ]
   },
   {
-    "fd4634faec47c29de40bbf7840723b41": [
+    "gd4634faec47c29de40bbf7840723b42": [
       "317500",
       "2020-11-13 00:00",
       "B90 3LA",

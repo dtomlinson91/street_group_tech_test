@@ -27,9 +27,6 @@ To get around public IP quotas I created a VPC in the `europe-west1` region that
 
 Assuming the `pp-2020.csv` file has been placed in the `./input` directory in the bucket you can run a command similar to:
 
-!!! caution
-    Use the command `python -m analyse_properties.main` as the entrypoint to the pipeline and not `analyse-properties` as the module isn't installed with poetry on the workers with the configuration below.
-
 ```bash
 python -m analyse_properties.main \
     --runner DataflowRunner \

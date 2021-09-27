@@ -6,21 +6,26 @@ The task has been tested on MacOS Big Sur and WSL2. The task should run on Windo
 
 For Beam 2.32.0 the supported versions of the Python SDK can be found [here](https://cloud.google.com/dataflow/docs/concepts/sdk-worker-dependencies#sdk-for-python).
 
-## Poetry
+## Pip
 
-The test uses [Poetry](https://python-poetry.org) for dependency management.
-
-!!! info inline end
-    If you already have Poetry installed globally you can go straight to the `poetry install` step.
-
-In a virtual environment install poetry:
+In a virtual environment run from the root of the repo:
 
 ```bash
-pip install poetry
+pip install -r requirements.txt
 ```
+
+## Poetry (Alternative)
+
+Install [Poetry](https://python-poetry.org) *globally*
 
 From the root of the repo install the dependencies with:
 
 ```bash
 poetry install --no-dev
+```
+
+Activate the shell with:
+
+```bash
+poetry shell
 ```
