@@ -9,7 +9,7 @@ import pathlib
 import apache_beam as beam
 from apache_beam.options.pipeline_options import PipelineOptions, SetupOptions
 
-from analyse_properties.debug import *  # noqa
+# from analyse_properties.debug import *  # noqa
 
 def slice_by_range(element, *ranges):
     """

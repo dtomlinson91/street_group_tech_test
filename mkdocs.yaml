@@ -4,37 +4,40 @@ use_directory_urls: false
 nav:
   - Documentation:
       - Welcome: index.md
-  #     - Installation: documentation/installation.md
-  #     - Usage: documentation/usage.md
-  # - Comments and Caveats:
-  #     - Introduction: comments_caveats/introduction.md
-  #     - Time limit: comments_caveats/time_limit.md
-  #     - Third party libraries: comments_caveats/third_party_libraries.md
-  #     - Areas of improvement and comments: comments_caveats/area_of_improvement_comments.md
-  #     - Similar names algorithm: comments_caveats/similar_names.md
-  # - Reference:
-  #     - deduplicator.main: reference/api_documentation_main.md
-  # - Changelog: changelog/changelog.md
+      - Installation: documentation/installation.md
+      - Usage: documentation/usage.md
+  - Discussion:
+      - Introduction: discussion/introduction.md
+      - Data Exploration Report: discussion/exploration.md
+      - Cleaning: discussion/cleaning.md
+      - Approach: discussion/approach.md
+      - Results: discussion/results.md
+  - DataFlow:
+      - Running on DataFlow: dataflow/index.md
+      - Scaling to the Full DataSet: dataflow/scaling.md
+  - Data Exploration Report: pandas-profiling/report.html
 theme:
   name: material
   palette:
     primary: indigo
     accent: blue
-  feature:
-    tabs: true
+  features:
+    navigation.tabs: true
 markdown_extensions:
   - admonition
   - codehilite:
       guess_lang: true
   - toc:
       permalink: true
+  - pymdownx.highlight
   - pymdownx.superfences
-  # - pymdownx.arithmatex:
-  #     generic: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.arithmatex:
+      generic: true
 plugins:
   - search:
       lang: en
 extra_javascript:
-  - javascripts/config.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
