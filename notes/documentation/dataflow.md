@@ -18,18 +18,19 @@ Export env variable:
 
 ### Dataflow
 
-#### Monthly dataset
+#### Yearly dataset
 
 ```bash
 python -m analyse_properties.main \
     --region europe-west1 \
-    --input gs://street-group-technical-test-dmot-euw1/input/pp-monthly-update-new-version.csv \
-    --output gs://street-group-technical-test-dmot-euw1/output/pp-monthly-update-new-version \
+    --input gs://street-group-technical-test-dmot-euw1/input/pp-2020.csv \
+    --output gs://street-group-technical-test-dmot-euw1/output/pp-2020 \
     --runner DataflowRunner \
     --project street-group \
     --temp_location gs://street-group-technical-test-dmot-euw1/tmp \
     --subnetwork=https://www.googleapis.com/compute/v1/projects/street-group/regions/europe-west1/subnetworks/europe-west-1-dataflow \
-    --no_use_public_ips
+    --no_use_public_ips \
+    --worker_machine_type=n1-highmem-2
 ```
 
 #### Full dataset
@@ -44,12 +45,10 @@ python -m analyse_properties.main \
     --temp_location gs://street-group-technical-test-dmot-euw1/tmp \
     --subnetwork=https://www.googleapis.com/compute/v1/projects/street-group/regions/europe-west1/subnetworks/europe-west-1-dataflow \
     --no_use_public_ips \
-    --worker_machine_type=n1-highmem-8
+    --worker_machine_type=n1-highmem-8 \
+    --num_workers=3 \
+    --autoscaling_algorithm=NONE
 ```
-
-    —-disk_size_gb=50 \
-
-
 
 ### Locally
 
@@ -83,3 +82,7 @@ Use `--experiments=enable_prime`
 Deploying a pipeline (with scaling options): <https://cloud.google.com/dataflow/docs/guides/deploying-a-pipeline>
 
 Available VM types (with pricing): <https://cloud.google.com/compute/vm-instance-pricing#n1_predefined>
+
+Performance
+
+Sideinput performance: <https://stackoverflow.com/questions/48242320/google-dataflow-apache-beam-python-side-input-from-pcollection-kills-perform>
