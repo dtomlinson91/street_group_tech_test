@@ -14,7 +14,7 @@
     
     
       
-        <title>Data Exploration Report - The Street Group Technical Test</title>
+        <title>Cleaning - The Street Group Technical Test</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#data-exploration-report" class="md-skip">
+        <a href="#cleaning" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Data Exploration Report
+              Cleaning
             
           </span>
         </div>
@@ -399,6 +399,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="exploration.html" class="md-nav__link">
+        Data Exploration Report
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -411,12 +425,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Data Exploration Report
+          Cleaning
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="exploration.html" class="md-nav__link md-nav__link--active">
-        Data Exploration Report
+      <a href="cleaning.html" class="md-nav__link md-nav__link--active">
+        Cleaning
       </a>
       
         
@@ -434,9 +448,70 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#interesting-observations" class="md-nav__link">
-    Interesting observations
+  <a href="#uniquely-identify-a-property" class="md-nav__link">
+    Uniquely identify a property.
   </a>
+  
+    <nav class="md-nav" aria-label="Uniquely identify a property.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#postcode" class="md-nav__link">
+    Postcode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paonsaon" class="md-nav__link">
+    PAON/SAON
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unneeded-columns" class="md-nav__link">
+    Unneeded columns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#general-cleaning" class="md-nav__link">
+    General cleaning
+  </a>
+  
+    <nav class="md-nav" aria-label="General cleaning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#upper-case" class="md-nav__link">
+    Upper case
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strip-leadingtrailing-whitespace" class="md-nav__link">
+    Strip leading/trailing whitespace
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repeated-rows" class="md-nav__link">
+    Repeated rows
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -444,20 +519,6 @@
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="cleaning.html" class="md-nav__link">
-        Cleaning
-      </a>
     </li>
   
 
@@ -600,9 +661,70 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#interesting-observations" class="md-nav__link">
-    Interesting observations
+  <a href="#uniquely-identify-a-property" class="md-nav__link">
+    Uniquely identify a property.
   </a>
+  
+    <nav class="md-nav" aria-label="Uniquely identify a property.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#postcode" class="md-nav__link">
+    Postcode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paonsaon" class="md-nav__link">
+    PAON/SAON
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unneeded-columns" class="md-nav__link">
+    Unneeded columns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#general-cleaning" class="md-nav__link">
+    General cleaning
+  </a>
+  
+    <nav class="md-nav" aria-label="General cleaning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#upper-case" class="md-nav__link">
+    Upper case
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strip-leadingtrailing-whitespace" class="md-nav__link">
+    Strip leading/trailing whitespace
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repeated-rows" class="md-nav__link">
+    Repeated rows
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -618,72 +740,142 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/dtomlinson91/street_group_tech_test/edit/master/docs/discussion/exploration.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/dtomlinson91/street_group_tech_test/edit/master/docs/discussion/cleaning.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="data-exploration-report">Data Exploration Report<a class="headerlink" href="#data-exploration-report" title="Permanent link">&para;</a></h1>
-<p>A brief exploration was done on the <strong>full</strong> dataset using the module <code>pandas-profiling</code>. The module uses <code>pandas</code> to load a dataset and automatically produce quantile/descriptive statistics, common values, extreme values, skew, kurtosis etc. and produces a report <code>.html</code> file that can be viewed interatively in your browser.</p>
-<p>The script used to generate this report is located in <code>./exploration/report.py</code> and can be viewed below.</p>
+                <h1 id="cleaning">Cleaning<a class="headerlink" href="#cleaning" title="Permanent link">&para;</a></h1>
+<p>In this page we discuss the cleaning stages and how best to prepare the data.</p>
+<h2 id="uniquely-identify-a-property">Uniquely identify a property.<a class="headerlink" href="#uniquely-identify-a-property" title="Permanent link">&para;</a></h2>
+<p>To uniquely identify a property with the data we have it is enough to have a Postcode and the PAON (or SAON or combination of both).</p>
+<h3 id="postcode">Postcode<a class="headerlink" href="#postcode" title="Permanent link">&para;</a></h3>
+<p>Because so few properties are missing a postcode (0.2% of all records) we will drop all rows that do not have one. We will drop some properties that could be identified uniquely with some more work, but the properties that are missing a postcode tend to be unusual/commercial/industrial (e.g a powerplant).</p>
+<h3 id="paonsaon">PAON/SAON<a class="headerlink" href="#paonsaon" title="Permanent link">&para;</a></h3>
+<p>The PAON has 3 possible formats:</p>
+<ul>
+<li>The street number.</li>
+<li>The building name.</li>
+<li>The building name and street number (comma delimited).</li>
+</ul>
+<p>The SAON:</p>
+<ul>
+<li>Identifies the appartment/flat number for the building.</li>
+<li>If the SAON is present (only 11.7% of values) then the PAON will either be<ul>
+<li>The building name.</li>
+<li>The building name and street number.</li>
+</ul>
+</li>
+</ul>
+<p>Because of the way the PAON and SOAN are defined, if any row is missing <strong>both</strong> of these columns we will drop it. As only having the postcode is not enough (generally speaking) to uniquely identify a property.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>In a production environment we could send these rows to a sink table (in BigQuery for example), rather than drop them outright. Collecting these rows over time might show some patterns on how we can uniquely identify properties that are missing these fields.</p>
+</div>
+<p>We split the PAON as part of the cleaning stage. If the PAON contains a comma then it contains the building name and street number. We keep the street number in the same position as the PAON and insert the building name as a new column at the end of the row. If the PAON does not contain a comma we insert a blank column at the end to keep the number of columns in the PCollection consistent.</p>
+<h3 id="unneeded-columns">Unneeded columns<a class="headerlink" href="#unneeded-columns" title="Permanent link">&para;</a></h3>
+<p>To try keep computation costs/time down, I decided to drop the categorical columns provided. These include:</p>
+<ul>
+<li>Property Type.</li>
+<li>Old/New.</li>
+<li>Duration.</li>
+<li>PPD Category Type.</li>
+<li>Record Status - monthly file only.</li>
+</ul>
+<p>Initially I was attempting to work against the full dataset so dropping these columns would make a difference in the amount of data that needs processing.</p>
+<p>These columns are also not consistent. E.g the property <code>63</code> <code>B16, 0AE</code> has three transactions. Two of these transactions have a property type of <code>Other</code> and one transaction has a property type of <code>Terraced</code>.</p>
+<p>These columns do provide some relevant information (old/new, duration, property type) and these could be included back into the pipeline fairly easily. Due to time constraints I was unable to make this change.</p>
+<p>In addition, I also dropped the transaction unique identifier column. I wanted the IDs calculated in the pipeline to be consistent in format, and hashing a string (md5) isn't that expensive to calculate with complexity <span class="arithmatex">\(\mathcal{O}(n)\)</span>.</p>
+<h3 id="general-cleaning">General cleaning<a class="headerlink" href="#general-cleaning" title="Permanent link">&para;</a></h3>
+<h4 id="upper-case">Upper case<a class="headerlink" href="#upper-case" title="Permanent link">&para;</a></h4>
+<p>As all strings in the dataset are upper case, we convert everything in the row to upper case to enforce consistency across the dataset.</p>
+<h4 id="strip-leadingtrailing-whitespace">Strip leading/trailing whitespace<a class="headerlink" href="#strip-leadingtrailing-whitespace" title="Permanent link">&para;</a></h4>
+<p>We strip all leading/trailing whitespace from each column to enforce consistency.</p>
+<h4 id="repeated-rows">Repeated rows<a class="headerlink" href="#repeated-rows" title="Permanent link">&para;</a></h4>
+<p>Some of the data is repeated:</p>
+<ul>
+<li>Some rows repeated, with the same date + price + address information but with a unique transaction id.</li>
+</ul>
 <details>
-    <summary>report.py</summary>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pathlib</span>
+    <summary>Example (PCollection)</summary>
 
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">pandas_profiling</span> <span class="kn">import</span> <span class="n">ProfileReport</span>
-
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">input_file</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parents</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="s2">&quot;data&quot;</span> <span class="o">/</span> <span class="s2">&quot;input&quot;</span> <span class="o">/</span> <span class="s2">&quot;pp-complete.csv&quot;</span>
-    <span class="p">)</span>
-    <span class="k">with</span> <span class="n">input_file</span><span class="o">.</span><span class="n">open</span><span class="p">()</span> <span class="k">as</span> <span class="n">csv</span><span class="p">:</span>
-        <span class="n">df_report</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
-            <span class="n">csv</span><span class="p">,</span>
-            <span class="n">names</span><span class="o">=</span><span class="p">[</span>
-                <span class="s2">&quot;transaction_id&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;price&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;date_of_transfer&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;postcode&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;property_type&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;old_new&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;duration&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;paon&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;saon&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;street&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;locality&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;town_city&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;district&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;county&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;ppd_category&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;record_status&quot;</span><span class="p">,</span>
-            <span class="p">],</span>
-        <span class="p">)</span>
-    <span class="n">profile</span> <span class="o">=</span> <span class="n">ProfileReport</span><span class="p">(</span><span class="n">df_report</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Price Paid Data&quot;</span><span class="p">,</span> <span class="n">minimal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="n">profile</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="s2">&quot;price_paid_data_report.html&quot;</span><span class="p">)</span>
-
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;fd4634faec47c29de40bbf7840723b41&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s2">&quot;317500&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;2020-11-13 00:00&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;B90 3LA&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;VERSTONE ROAD&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;SHIRLEY&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;SOLIHULL&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;SOLIHULL&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;WEST MIDLANDS&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;&quot;</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;fd4634faec47c29de40bbf7840723b41&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s2">&quot;317500&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;2020-11-13 00:00&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;B90 3LA&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;VERSTONE ROAD&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;SHIRLEY&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;SOLIHULL&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;SOLIHULL&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;WEST MIDLANDS&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;&quot;</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">]</span>
 </code></pre></div>
+
 </details>
 
-<p>The report can be viewed by clicking the Data Exploration Report tab at the top of the page.</p>
-<h2 id="interesting-observations">Interesting observations<a class="headerlink" href="#interesting-observations" title="Permanent link">&para;</a></h2>
-<p>When looking at the report we are looking for data quality and missing observations. The statistics are interesting to see but are largely irrelevant for this task.</p>
-<p>The data overall looks very good for a dataset of its size (~27 million records). For important fields there are no missing values:</p>
+<p>These rows will be deduplicated as part of the pipeline.</p>
 <ul>
-<li>Every row has a price.</li>
-<li>Every row has a unique transaction ID.</li>
-<li>Every row has a transaction date.</li>
+<li>Some rows have the same date + address information, but different prices.</li>
 </ul>
-<p>Some fields that we will need are missing data:</p>
-<ul>
-<li>~42,000 (0.2%) are missing a Postcode.</li>
-<li>~4,000 (&lt;0.1%) are missing a PAON (primary addressable object name).</li>
-<li>~412,000 (1.6%) are missing a Street Name.</li>
-</ul>
+<p>It would be very unusual to see multiple transactions on the same date for the same property. One reason could be that there was a data entry error, resulting in two different transactions with only one being the real price. As the date column does not contain the time (it is fixed at <code>00:00</code>) it is impossible to tell.</p>
+<p>Another reason could be missing building/flat/appartment information in this entry.</p>
+<p>We <strong>keep</strong> these in the data, resulting in some properties having multiple transactions with different prices on the same date. Without a time or more information to go on, it is difficult to see how these could be filtered out.</p>
+<details>
+    <summary>Example (Output)</summary>
+
+<div class="highlight"><pre><span></span><code><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;property_id&quot;</span><span class="p">:</span> <span class="s2">&quot;20d5c335c8d822a40baab0ecd57e92a4&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;readable_address&quot;</span><span class="p">:</span> <span class="s2">&quot;53 PAVENHAM DRIVE\nBIRMINGHAM\nWEST MIDLANDS\nB5 7TN&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;flat_appartment&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;builing&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;number&quot;</span><span class="p">:</span> <span class="s2">&quot;53&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;street&quot;</span><span class="p">:</span> <span class="s2">&quot;PAVENHAM DRIVE&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;locality&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;town&quot;</span><span class="p">:</span> <span class="s2">&quot;BIRMINGHAM&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;district&quot;</span><span class="p">:</span> <span class="s2">&quot;BIRMINGHAM&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;county&quot;</span><span class="p">:</span> <span class="s2">&quot;WEST MIDLANDS&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;postcode&quot;</span><span class="p">:</span> <span class="s2">&quot;B5 7TN&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;property_transactions&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mi">270000</span><span class="p">,</span>
+        <span class="nt">&quot;transaction_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-23&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;year&quot;</span><span class="p">:</span> <span class="mi">2020</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mi">364000</span><span class="p">,</span>
+        <span class="nt">&quot;transaction_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-23&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;year&quot;</span><span class="p">:</span> <span class="mi">2020</span>
+      <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;latest_transaction_year&quot;</span><span class="p">:</span> <span class="mi">2020</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div>
+
+</details>
                 
               
               
@@ -703,7 +895,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="introduction.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Introduction" rel="prev">
+        <a href="exploration.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Data Exploration Report" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -712,20 +904,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Introduction
+              Data Exploration Report
             </div>
           </div>
         </a>
       
       
         
-        <a href="cleaning.html" class="md-footer__link md-footer__link--next" aria-label="Next: Cleaning" rel="next">
+        <a href="approach.html" class="md-footer__link md-footer__link--next" aria-label="Next: Approach" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Cleaning
+              Approach
             </div>
           </div>
           <div class="md-footer__button md-icon">
