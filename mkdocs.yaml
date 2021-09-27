@@ -1,0 +1,43 @@
+﻿site_name: The Street Group Technical Test
+repo_url: https://github.com/dtomlinson91/street_group_tech_test
+use_directory_urls: false
+nav:
+  - Documentation:
+      - Welcome: index.md
+      - Installation: documentation/installation.md
+      - Usage: documentation/usage.md
+  - Discussion:
+      - Introduction: discussion/introduction.md
+      - Data Exploration Report: discussion/exploration.md
+      - Cleaning: discussion/cleaning.md
+      - Approach: discussion/approach.md
+      - Results: discussion/results.md
+  - DataFlow:
+      - Running on DataFlow: dataflow/index.md
+      - Scaling to the Full DataSet: dataflow/scaling.md
+  - Data Exploration Report: pandas-profiling/report.html
+theme:
+  name: material
+  palette:
+    primary: indigo
+    accent: blue
+  features:
+    navigation.tabs: true
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: true
+  - toc:
+      permalink: true
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.arithmatex:
+      generic: true
+plugins:
+  - search:
+      lang: en
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js

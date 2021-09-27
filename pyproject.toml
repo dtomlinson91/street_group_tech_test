@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "analyse_properties"
+version = "0.1.0"
+description = ""
+authors = ["Daniel Tomlinson <dtomlinson@panaetius.co.uk>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+apache-beam = {extras = ["gcp"], version = "^2.32.0"}
+
+[tool.poetry.dev-dependencies]
+# pytest = "^5.2"
+prospector = "^1.5.1"
+pandas-profiling = "^3.0.0"
+mkdocs = "^1.2.2"
+mkdocs-material = "^7.3.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+"analyse-properties" = "analyse_properties.main:run"

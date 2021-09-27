@@ -1,0 +1,27 @@
+"Error message from worker: Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/dataflow_worker/batchworker.py", line 651, in do_work
+    work_executor.execute()
+  File "/usr/local/lib/python3.7/site-packages/dataflow_worker/executor.py", line 181, in execute
+    op.finish()
+  File "dataflow_worker/native_operations.py", line 93, in dataflow_worker.native_operations.NativeWriteOperation.finish
+  File "dataflow_worker/native_operations.py", line 94, in dataflow_worker.native_operations.NativeWriteOperation.finish
+  File "dataflow_worker/native_operations.py", line 95, in dataflow_worker.native_operations.NativeWriteOperation.finish
+  File "/usr/local/lib/python3.7/site-packages/dataflow_worker/nativeavroio.py", line 308, in __exit__
+    self._data_file_writer.flush()
+  File "fastavro/_write.pyx", line 664, in fastavro._write.Writer.flush
+  File "fastavro/_write.pyx", line 639, in fastavro._write.Writer.dump
+  File "fastavro/_write.pyx", line 451, in fastavro._write.snappy_write_block
+  File "fastavro/_write.pyx", line 458, in fastavro._write.snappy_write_block
+  File "/usr/local/lib/python3.7/site-packages/apache_beam/io/filesystemio.py", line 200, in write
+    self._uploader.put(b)
+  File "/usr/local/lib/python3.7/site-packages/apache_beam/io/gcp/gcsio.py", line 720, in put
+    self._conn.send_bytes(data.tobytes())
+  File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 393, in _send_bytes
+    header = struct.pack("!i", n)
+struct.error: 'i' format requires -2147483648 <= number <= 2147483647
+"
+
+
+"Out of memory: Killed process 2042 (python) total-vm:28616496kB, anon-rss:25684136kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:51284kB oom_score_adj:900"

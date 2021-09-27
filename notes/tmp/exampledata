@@ -1,0 +1,44 @@
+[{
+  "property_id": "3cf3c06632c46754696f2017933702f3",
+  "flat_appartment": "",
+  "builing": "",
+  "number": "63",
+  "street": "ROTTON PARK STREET",
+  "locality": "",
+  "town": "BIRMINGHAM",
+  "district": "BIRMINGHAM",
+  "county": "WEST MIDLANDS",
+  "postcode": "B16 0AE",
+  "property_transactions": [
+    { "price": "385000", "transaction_date": "2021-01-08", "year": "2021" },
+    { "price": "701985", "transaction_date": "2019-03-28", "year": "2019" },
+    { "price": "1748761", "transaction_date": "2020-05-27", "year": "2020" }
+  ],
+  "latest_transaction_year": "2021"
+},
+{
+    "property_id": "c650d5d7bb0daf0a19bb2cacabbee74e",
+    "readable_address": "16 STATION ROAD\nPARKGATE\nNESTON\nCHESHIRE WEST AND CHESTER\nCH64 6QJ",
+    "flat_appartment": "",
+    "builing": "",
+    "number": "16",
+    "street": "STATION ROAD",
+    "locality": "PARKGATE",
+    "town": "NESTON",
+    "district": "CHESHIRE WEST AND CHESTER",
+    "county": "CHESHIRE WEST AND CHESTER",
+    "postcode": "CH64 6QJ",
+    "property_transactions": [
+        {
+        "price": "280000",
+        "transaction_date": "2020-11-30",
+        "year": "2020"
+        },
+        {
+        "price": "265000",
+        "transaction_date": "2020-05-29",
+        "year": "2020"
+        }
+    ],
+    "latest_transaction_year": "2020"
+}]
