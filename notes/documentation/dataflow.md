@@ -22,11 +22,11 @@ Export env variable:
 
 ```bash
 python -m analyse_properties.main \
+    --runner DataflowRunner \
+    --project street-group \
     --region europe-west1 \
     --input gs://street-group-technical-test-dmot-euw1/input/pp-2020.csv \
     --output gs://street-group-technical-test-dmot-euw1/output/pp-2020 \
-    --runner DataflowRunner \
-    --project street-group \
     --temp_location gs://street-group-technical-test-dmot-euw1/tmp \
     --subnetwork=https://www.googleapis.com/compute/v1/projects/street-group/regions/europe-west1/subnetworks/europe-west-1-dataflow \
     --no_use_public_ips \
