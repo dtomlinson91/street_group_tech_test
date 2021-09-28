@@ -40,7 +40,7 @@ python -m analyse_properties.main \
     --worker_machine_type=n1-highmem-2
 ```
 
-The output file from this pipeline is publically available and can be downloaded [here](https://storage.googleapis.com/street-group-technical-test-dmot-euw1/output/pp-2020-00000-of-00001.json).
+The output file from this pipeline is publicly available and can be downloaded [here](https://storage.googleapis.com/street-group-technical-test-dmot-euw1/output/pp-2020-00000-of-00001.json).
 
 The job graph for this pipeline is displayed below:
 
